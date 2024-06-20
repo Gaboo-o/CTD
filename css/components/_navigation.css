@@ -1,0 +1,76 @@
+/* Navigation bar */
+.nav-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #353535;
+  z-index: 1000;
+  border-bottom: 1px solid #ffffff;
+  padding: 1rem;
+}
+
+/* Navigation list */
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* Left-aligned items */
+.nav-list-left {
+  margin-right: auto;
+}
+
+/* Right-aligned items */
+.nav-list-right {
+  display: flex;
+  border-right: 1px solid #ffffff;
+}
+
+/* Navigation buttons */
+.nav-button {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: background 0.3s;
+}
+.nav-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Navigation images */
+.nav-list-img {
+  width: 20px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+  display: none; /* button hidden initially */
+  cursor: pointer;
+}
+.menu-toggle img {
+  width: 30px;
+  height: auto;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .nav-list-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    border: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+}

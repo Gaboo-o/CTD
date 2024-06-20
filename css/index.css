@@ -1,0 +1,46 @@
+@import 'components/_navigation.css';
+@import 'components/_projects.css';
+
+/************************ 
+*        General        *
+*************************/
+body {
+    background-color: #353535;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/************************ 
+*        Header         *
+*************************/
+.header-title {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/************************ 
+*        Social         *
+*************************/
+.social-links li {
+    display: inline-block;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+.icon-hover {
+    transition: filter 0.3s;
+}
+.icon-hover:hover {
+    filter: invert(1);
+}
