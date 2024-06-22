@@ -38,7 +38,8 @@
   padding: 0.5rem;
   transition: background 0.3s;
 }
-.nav-button:hover {
+.nav-button:hover,
+.nav-button:focus {
   background: #ffffff;
   color: #000000;
 }
@@ -61,7 +62,7 @@
 }
 
 /* Media queries for responsive design */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .nav-list-right {
     display: none;
     flex-direction: column;
