@@ -1,0 +1,18 @@
+.social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}

@@ -1,46 +1,71 @@
-.project {
-    border: 1px solid #ffffff;
-    box-shadow: 0 4px 8px #00000033;
+:root {
+    --gap: 2%;
+    --projects-per-row: 3;
+}
+
+.projects {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin: 2%;
-    transition: transform 0.3s, box-shadow 0.3s;
+    flex-wrap: wrap; /* Allows multiple lines if not enough space to fit it all into 1 */
+    gap: var(--gap);
+    padding: 0.5rem;
+    justify-content: center;
+}
+
+.project {
+    flex: 1 1 calc(100% / var(--projects-per-row) - var(--gap)); /* Calculates initial size */
+    max-width: calc(100% / var(--projects-per-row) - var(--gap)); /* Prevents stretching to fill the available space */
+    margin-bottom: var(--gap);
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #353535;
+    transition: transform 0.3s ease;
 }
 .project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px #00000033;
 }
+
 .project-image {
-    width: 50%;
-    height: 64px;
-    flex-shrink: 0;
+    width: 100%;
+    height: auto;
 }
+
 .project-details {
     padding: 1rem;
-    width: 50%;
+    text-align: center;
 }
-.project h2 {
+
+.project-details-title {
     margin-top: 0;
 }
-.project a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
+
+.project-details-description {
+    margin-bottom: 1rem;
 }
-.project a:hover {
-    text-decoration: underline;
+
+.project-details-button {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+.project-details-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .project {
+        flex-basis: calc(50% - var(--gap)); /* Adjust item size for smaller screens */
+        max-width: calc(50% - var(--gap)); /* Ensures fixed width for each item on smaller screens */
+    }
 }
 
 @media (max-width: 500px) {
-    .project {        
-        flex-direction: column;
-    }
-    .project-image, .project-details {
-        width: 100%;
-    }
-    .project-details {
-        padding: 1rem 0;
+    .project {
+        flex-basis: calc(100% - var(--gap)); /* Adjust item size for smaller screens */
+        max-width: calc(100% - var(--gap)); /* Ensures fixed width for each item on smaller screens */
     }
 }

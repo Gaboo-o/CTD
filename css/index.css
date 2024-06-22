@@ -1,20 +1,31 @@
-@import 'components/_navigation.css';
-@import 'components/_projects.css';
+@import "components/_navigation.css";
+@import "components/_projects.css";
+@import "components/_footer.css";
 
 /************************ 
 *        General        *
 *************************/
 body {
-    background-color: #353535;
-    color: #ffffff;
+    padding: 0;
+    margin: 0;
     font-family: Arial, sans-serif;
     text-align: left;
+    background-color: #353535;
+    color: #ffffff;
+}
+
+footer {
+    padding: 0.2rem 0; 
+    margin: 0;
+    text-align: center;
+    background-color: #454545;
+    color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
     font-size: 24px;
     font-weight: normal;
+    color: #ffffff;
 }
 
 /************************ 
@@ -27,20 +38,14 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-/************************ 
-*        Social         *
-*************************/
-.social-links li {
-    display: inline-block;
-}
-
+/* Icon Styles */
 .icon {
     width: 32px;
     height: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
 }
-.icon-hover {
-    transition: filter 0.3s;
-}
+
 .icon-hover:hover {
-    filter: invert(1);
+    filter: invert(1); /* Invert color on hover */
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
