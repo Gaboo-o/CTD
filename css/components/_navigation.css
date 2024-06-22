@@ -1,12 +1,12 @@
 /* Navigation bar */
 .nav-bar {
+  background-color: #353535;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #353535;
   z-index: 1000;
-  border-bottom: 1px solid #ffffff;
   padding: 1rem;
+  border-bottom: 1px solid #555555;
 }
 
 /* Navigation list */
@@ -26,7 +26,7 @@
 /* Right-aligned items */
 .nav-list-right {
   display: flex;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #555555;
 }
 
 /* Navigation buttons */

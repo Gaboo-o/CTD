@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My New Webpage</title> 
+    <title>My Portfolio</title> 
     <link href="css/index.css" rel="stylesheet">
   </head>
   <body>
@@ -19,19 +19,27 @@
           <img src="images/github_icon.svg" alt="Menu Icon">
         </li>
 
-        <!--Projects button-->
-        <li class="nav-list-right">
-          <a class="nav-button" href="#projects">
-            <img class="nav-list-img" src="images/github_icon.svg" alt="Projects Icon">
-            <span>Projects</span>
-          </a>
-        </li>
-
         <!--About button-->
         <li class="nav-list-right">
           <a class="nav-button" href="#about">
             <img class="nav-list-img" src="images/github_icon.svg" alt="About Icon">
             <span>About</span>
+          </a>
+        </li>
+
+        <!--Skills button-->
+        <li class="nav-list-right">
+          <a class="nav-button" href="#skills">
+            <img class="nav-list-img" src="images/github_icon.svg" alt="Skills Icon">
+            <span>Skills</span>
+          </a>
+        </li>
+
+        <!--Projects button-->
+        <li class="nav-list-right">
+          <a class="nav-button" href="#projects">
+            <img class="nav-list-img" src="images/github_icon.svg" alt="Projects Icon">
+            <span>Projects</span>
           </a>
         </li>
 
@@ -43,63 +51,81 @@
           </a>
         </li>
       </ul>
-    </nav>  
-    
-    <h1 class="header-title">Gabriel</h1>
+    </nav> 
 
-    <section id="about">
-      <h2>About</h2>
-      <p>I am a CS student learning WebDev</p>
-    </section>
+    <header>   
+      <h1 class="header-title">Gabriel</h1>
 
-    <section id="projects">
-      <h2>Experience</h2>
+      <section id="about">
+        <h2>About</h2>
+        <p>I am a CS student learning WebDev</p>
+      </section>
+    </header>
 
-      <div class="project">
-        <img src="images\github_icon.svg" alt="Project 1" class="project-image">
-        <div class="project-details">
-            <h2>Project Title 1</h2>
-            <p>Description of project 1. This project involves...</p>
-            <a href="https://github.com/Gaboo-o" target="_blank">View on GitHub</a>
+    <main>
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects">
+          <div class="project">
+            <img src="images\github_icon.svg" alt="Project 1" class="project-image">
+            <div class="project-details">
+                <h2 class="project-details-title">Project Title 1</h2>
+                <p class="project-details-description">Description of project 1. This project involves...</p>
+                <a class="project-details-button" href="https://github.com/Gaboo-o" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="images\github_icon.svg" alt="Project 2" class="project-image">
+            <div class="project-details">
+                <h2 class="project-details-title">Project Title 2</h2>
+                <p class="project-details-description">Description of project 2. This project involves...</p>
+                <a class="project-details-button" href="https://github.com/Gaboo-o" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="images\github_icon.svg" alt="Project 3" class="project-image">
+            <div class="project-details">
+                <h2 class="project-details-title">Project Title 3</h2>
+                <p class="project-details-description">Description of project 3. This project involves...</p>
+                <a class="project-details-button" href="https://github.com/Gaboo-o" target="_blank">View on GitHub</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+      
+      <section id="skills">
+        <h2>Skills</h2>
+      </section>
+    </main>
 
-      <div class="project">
-        <img src="images\github_icon.svg" alt="Project 2" class="project-image">
-        <div class="project-details">
-            <h2>Project Title 2</h2>
-            <p>Description of project 2. This project involves...</p>
-            <a href="https://github.com/Gaboo-o" target="_blank">View on GitHub</a>
+    <footer>
+      <section id="connect"> 
+        <!-- Icons -->
+        <div class="social-links">
+          <!-- GitHub icon -->
+          <a class="social-link" href="https://github.com/Gaboo-o" target="_blank">
+            <img class="icon icon-hover" src="images/github_icon.svg" alt="GitHub">
+          </a>
+
+          <!-- LinkedIn icon -->
+          <a class="social-link" href="https://www.linkedin.com/in/gabriel-valle-06bb0b2b8/" target="_blank">
+            <img class="icon icon-hover" src="images/linkedin_icon.svg" alt="LinkedIn">
+          </a>
+          
+          <!-- Gmail icon -->  
+          <a class="social-link" href="mailto:gabrielvalle33210@gmail.com" target="_blank">
+            <img class="icon icon-hover" src="images/gmail_icon.svg" alt="Gmail">
+          </a>
         </div>
-      </div>
-    </section> 
-
-    <section id="connect">
-      <h2>Connect</h2>
-
-      <!--icons-->
-      <ul class="social-links">
-          <!--GitHub icon-->
-          <li>
-            <a href="https://github.com/Gaboo-o" target="_blank">
-              <img class="icon icon-hover" src="images\github_icon.svg" alt="GitHub">
-            </a>
-          </li>
-
-          <!--LinkedIn icon-->
-          <li> 
-            <a href="https://www.linkedin.com/in/gabriel-valle-06bb0b2b8/" target="_blank">
-              <img class="icon icon-hover" src="images\linkedin_icon.svg" alt="LinkedIn">
-            </a>
-          </li>
-
-          <!--Gmail icon-->
-          <li> 
-            <a href="https://gabrielvalle33210@gmail.com" target="_blank">
-              <img class="icon icon-hover" src="images\gmail_icon.svg" alt="Gmail">
-            </a>
-          </li>
-      </ul>
-    </section>
+        
+        <!-- Copyright -->
+        <p class="copyright">
+          &copy; 2024 Gabriel Valle. All rights reserved.
+        </p>
+      </section>
+    </footer>    
   </body>
 </html>
