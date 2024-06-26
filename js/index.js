@@ -82,3 +82,45 @@ messageForm.addEventListener("submit", (event) => {
 
 ///////////////////////////////////////////////////////////////////////////
 
+async function fetchGitHubRepos() {
+    try {
+        const response = await fetch("https://api.github.com/users/Gaboo-o/repos");
+        
+        if (!response.ok) {
+            throw new Error(response.status);
+        }
+
+        return await response.json();
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
+function updateProjects(repos) {
+    const projectsContainer = document.querySelector('.projects');
+    projectsContainer.innerHTML = ''; // Clear existing projects
+
+    repos.forEach((repo, index) => { // Loop to test the layout
+        if (index < 4) {
+            const projectHTML = `
+            <div class="project">
+                <img src="${repo.owner.avatar_url}" alt="Project ${index + 1}" class="project-image">
+                <div class="project-details">
+                    <h2 class="project-details-title">${repo.name}</h2>
+                    <p class="project-details-description">${repo.description}</p>
+                    <a class="project-details-button" href="${repo.html_url}" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+            `;
+
+            projectsContainer.insertAdjacentHTML('beforeend', projectHTML);
+        }
+    });
+}
+
+// Update projects only after fetching them
+document.addEventListener('DOMContentLoaded', async () => {
+    const repos = await fetchGitHubRepos();
+    updateProjects(repos);
+});
