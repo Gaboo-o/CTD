@@ -1,0 +1,52 @@
+{
+    "navBar": {
+        "logoSrc": "images/GV_Logo-black.png",
+        "logoAlt": "Logo",
+        "menuIconSrc": "images/github_icon.svg",
+        "menuIconAlt": "Menu Icon",
+        "navItems": [
+          { "text": "About", "src": "images/github_icon.svg", "href": "#about" },
+          { "text": "Skills", "src": "images/github_icon.svg", "href": "#skills" },
+          { "text": "Projects", "src": "images/github_icon.svg", "href": "#projects" },
+          { "text": "Contact", "src": "images/github_icon.svg", "href": "#contact" }
+        ]
+    },
+    "header": {
+        "about": {
+            "title": "Title\nHere",
+            "description": "The description will go here...",
+            "imageSrc": "images/profilePicture.png",
+            "imageAlt": "Profile Picture"
+        },
+        "hiddenAbout": {
+            "details": "Detailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...",
+            "toggleOpen": "\u25B2",
+            "toggleClose": "\u25BC"
+        }
+    },
+    "skills": {
+        "title": "Skills",
+        "list": [
+          { "src": "images/github_icon.svg", "alt": "C++" },
+          { "src": "images/github_icon.svg", "alt": "Javascript" },
+          { "src": "images/github_icon.svg", "alt": "HTML" },
+          { "src": "images/github_icon.svg", "alt": "CSS" },
+          { "src": "images/github_icon.svg", "alt": "Python" },
+          { "src": "images/github_icon.svg", "alt": "C#" },
+          { "src": "images/github_icon.svg", "alt": "Git" }
+        ],
+        "settings": [
+            { "duration": "20s", "direction": "normal" },
+            { "duration": "15s", "direction": "reverse" }
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "list": [
+            { "name": "CatsAndDogsGallery", "imgFile": "main/images/catTitle.png" },
+            { "name": "NiceLittleSmallMinimalisticGame", "imgFile": "" },
+            { "name": "CTD", "imgFile": "" }
+          ]
+    }
+}
+  

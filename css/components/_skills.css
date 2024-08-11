@@ -1,0 +1,42 @@
+@import "__variables.css";
+
+.skills-title {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 1em;
+  margin: 1em 0;
+  border-top: 5px solid var(--border-color);
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em auto 0;
+  width: 90%;
+  gap: 1em;
+  overflow: hidden;
+}
+
+.skill-tag {
+  margin-right: 1em;
+  width: 8em;
+}
+
+.slider .slider-inner {
+  display: flex;
+  width: fit-content;
+  animation: loop linear infinite;
+}
+
+.slider .slider-inner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

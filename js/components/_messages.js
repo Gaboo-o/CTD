@@ -1,50 +1,3 @@
-import { dataFetch } from "./dataFetch.js";
-import { initializeNavigation } from "./components/_navigation.js";
-import { initializeHeader } from "./components/_header.js";
-import { initializeSkills } from "./components/_skills.js"
-import { initializeProjects } from "./components/_projects.js"
-
-/*
-*  Getting Content
-*/
-
-let content;
-
-const loadContent = async () => {
-    try {
-        content = await dataFetch("./json/content.json");
-    }
-    catch(error) {
-        console.error(error);
-    }
-};
-
-
-/*
-*  Initialization
-*/
-
-document.addEventListener("DOMContentLoaded", async () => {
-    await loadContent();
-
-    // Navigation
-    initializeNavigation(content.navBar);
-
-    // Header
-    initializeHeader(content.header);
-
-    // Skills
-    initializeSkills(content.skills);
-
-    // Projects
-    initializeProjects(content.projects);
-});
-
-
-/*
-*  Contact
-*/
-
 // Select form
 const messageForm = document.forms["leave_message"];
 
@@ -93,23 +46,3 @@ messageForm.addEventListener("submit", (event) => {
     // Reset form fields
     messageForm.reset();
 });
-
-
-/*
-*  Footer
-*/
-
-// Create footer element
-const footer = document.querySelector("footer");
-document.body.appendChild(footer);
-
-// Get current year
-const today = new Date();
-const thisYear = today.getFullYear();
-
-// Create copyright element
-const copyright = document.createElement("p");
-copyright.innerHTML = `&copy; ${thisYear} Gabriel Valle. All rights reserved.`;
-
-// Append copyright element to footer
-footer.appendChild(copyright);

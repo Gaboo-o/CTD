@@ -1,26 +1,38 @@
+@import "__variables.css";
+
 :root {
     --gap: 2%;
     --projects-per-row: 3;
+    --s: 1em; /* Corner size */
 }
 
-.projects {
+.projects-title {
+    font-size: 2em;
+    text-align: center;
+    padding-top: 1em;
+    margin: 1em 0;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 5px solid var(--border-color);
+}
+
+.projects-container {
     display: flex;
     flex-wrap: wrap; /* Allows multiple lines if not enough space to fit it all into 1 */
     gap: var(--gap);
-    padding: 0.5rem;
+    padding: 0.5em;
     justify-content: center;
 }
 
 .project {
+    box-sizing: border-box;
     flex: 1 1 calc(100% / var(--projects-per-row) - var(--gap)); /* Calculates initial size */
     max-width: calc(100% / var(--projects-per-row) - var(--gap)); /* Prevents stretching to fill the available space */
     margin-bottom: var(--gap);
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    background-color: #353535;
+    border: 5px solid var(--border-color);
     transition: transform 0.3s ease;
 }
+
 .project:hover {
     transform: translateY(-5px);
 }
@@ -31,41 +43,40 @@
 }
 
 .project-details {
-    padding: 1rem;
+    padding: 0.5em;
     text-align: center;
-}
-
-.project-details-title {
-    margin-top: 0;
-}
-
-.project-details-description {
-    margin-bottom: 1rem;
 }
 
 .project-details-button {
     display: inline-block;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 1em;
+    margin: 1em auto;
+    border: 5px solid var(--border-color);
+    mask:
+        conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+        0 0 / calc(100% - var(--s)) calc(100% - var(--s)),
+        linear-gradient(#000 0 0) content-box;
     text-decoration: none;
-    background-color: #007bff;
-    color: #ffffff;
-    transition: background-color 0.3s ease;
-}
-.project-details-button:hover {
-    background-color: #0056b3;
+    background: var(--background-color);
+    color: var(--text-color);
 }
 
-@media (max-width: 768px) {
+.project-details-button:hover {
+    background: var(--background-hover-color);
+    color: var(--text-hover-color);  
+    mask: none;
+}
+
+@media (max-width: 1000px) {
     .project {
-        flex-basis: calc(50% - var(--gap)); /* Adjust item size for smaller screens */
-        max-width: calc(50% - var(--gap)); /* Ensures fixed width for each item on smaller screens */
+        flex-basis: calc(50% - var(--gap));
+        max-width: calc(50% - var(--gap));
     }
 }
 
 @media (max-width: 500px) {
     .project {
-        flex-basis: calc(100% - var(--gap)); /* Adjust item size for smaller screens */
-        max-width: calc(100% - var(--gap)); /* Ensures fixed width for each item on smaller screens */
+        flex-basis: calc(100% - var(--gap));
+        max-width: calc(100% - var(--gap));
     }
 }

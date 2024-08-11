@@ -1,17 +1,25 @@
-@import "components/_navigation.css";
-@import "components/_projects.css";
-@import "components/_footer.css";
+@import url("components/_header.css");
+@import url("components/_navigation.css");
+@import url("components/_skills.css");
+@import url("components/_projects.css");
+@import url("components/_messages.css");
+@import url("components/_footer.css");
 
 /************************ 
 *        General        *
 *************************/
+* { 
+    margin: 0; 
+    padding: 0;     
+}
+
 body {
-    padding: 0;
-    margin: 0;
     font-family: Arial, sans-serif;
+    font-weight: bold;
     text-align: left;
     background-color: #353535;
     color: #ffffff;
+    scroll-behavior: smooth;
 }
 
 footer {
@@ -20,22 +28,6 @@ footer {
     text-align: center;
     background-color: #454545;
     color: #ffffff;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 24px;
-    font-weight: normal;
-    color: #ffffff;
-}
-
-/************************ 
-*        Header         *
-*************************/
-.header-title {
-    color: #ffffff;
-    font-size: 36px;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
 /* Icon Styles */
