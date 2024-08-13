@@ -29,15 +29,3 @@ footer {
     background-color: #454545;
     color: #ffffff;
 }
-
-/* Icon Styles */
-.icon {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
-}
-
-.icon-hover:hover {
-    filter: invert(1); /* Invert color on hover */
-    transform: scale(1.1); /* Slightly enlarge icon on hover */
-}

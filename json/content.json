@@ -20,8 +20,14 @@
         },
         "hiddenAbout": {
             "details": "Detailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...",
-            "toggleOpen": "\u25B2",
-            "toggleClose": "\u25BC"
+            "toggleClose": {
+                "fill": "\u25B4",
+                "outline": "\u25B5"
+            },
+            "toggleOpen": {
+                "fill": "\u25BE",
+                "outline": "\u25BF"
+            }
         }
     },
     "skills": {
@@ -47,6 +53,13 @@
             { "name": "NiceLittleSmallMinimalisticGame", "imgFile": "" },
             { "name": "CTD", "imgFile": "" }
           ]
+    },
+    "footer": {
+        "list": [
+          { "src": "images/github_icon.svg", "alt": "GitHub", "href": "https://github.com/Gaboo-o" },
+          { "src": "images/linkedin_icon.svg", "alt": "LinkedIn", "href": "https://www.linkedin.com/in/gabriel-valle-06bb0b2b8/" },
+          { "src": "images/gmail_icon.svg", "alt": "Gmail", "href": "mailto:gabrielvalle33210@gmail.com" }
+        ]
     }
 }
   

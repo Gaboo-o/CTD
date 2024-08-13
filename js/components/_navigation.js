@@ -1,13 +1,19 @@
+import { smoothScrollTo } from "./_hiddenAbout.js";
+
 export function initializeNavigation(data) {
     // Logo
     const logo = document.querySelector(".nav-list-left img");
     logo.src = data.logoSrc;
     logo.alt = data.logoAlt;
 
-    // Menu icon
+    // Menu
+    const menuToggle = document.querySelector(".menu-toggle");
     const menuIcon = document.querySelector(".menu-toggle img");
     menuIcon.src = data.menuIconSrc;
     menuIcon.alt = data.menuIconAlt;
+
+    // Trigger hidden about
+    const toggleAbout = document.querySelector(".toggle-about-text");
 
     // Nav items
     const navListRight = document.querySelector(".nav-list-right");
@@ -30,15 +36,35 @@ export function initializeNavigation(data) {
         navButton.appendChild(navListImg);
         navButton.appendChild(span);
         navListRight.appendChild(navButton);
+
+        navButton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            // Smooth scroll
+            const targetElement = document.querySelector(navButton.getAttribute("href"));
+            if (targetElement) {
+                smoothScrollTo(targetElement);
+            }
+
+            // Trigger hidden about
+            if (item.text === "About") {     
+                const event = new Event("open");           
+                toggleAbout.dispatchEvent(event);
+            }
+
+            // Remove Menu
+            menuToggle.click();
+        });
     });
 
     // Menu logic
-    const menuToggle = document.querySelector(".menu-toggle");
     let isActive = false;
 
     menuToggle.addEventListener("click", () => {
         const navButtons = document.querySelectorAll(".nav-button");
         const delayMultiplier = 100;
+
+        console.log("here2");
 
         if (!isActive) {
             navListRight.classList.add("active");            
@@ -52,9 +78,10 @@ export function initializeNavigation(data) {
         }
         
         navButtons.forEach((button, index) => {
-            const delay = isActive
-            ? (navButtons.length - 1 - index) * delayMultiplier
-            : index * delayMultiplier;
+            const delay = 
+                isActive
+                    ? (navButtons.length - 1 - index) * delayMultiplier
+                    : index * delayMultiplier;
             
             setTimeout(() => {
                 button.classList.toggle("active");

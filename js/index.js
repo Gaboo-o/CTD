@@ -1,8 +1,10 @@
 import { dataFetch } from "./dataFetch.js";
 import { initializeNavigation } from "./components/_navigation.js";
-import { initializeHeader } from "./components/_header.js";
+import { initializeAbout } from "./components/_about.js";
+import { initializeHiddenAbout } from "./components/_hiddenAbout.js";
 import { initializeSkills } from "./components/_skills.js"
 import { initializeProjects } from "./components/_projects.js"
+import { initializeFooter } from "./components/_footer.js"
 
 /*
 *  Getting Content
@@ -31,13 +33,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeNavigation(content.navBar);
 
     // Header
-    initializeHeader(content.header);
+    initializeAbout(content.header);
+    initializeHiddenAbout(content.header);
 
     // Skills
     initializeSkills(content.skills);
 
     // Projects
     initializeProjects(content.projects);
+
+    //Footer 
+    initializeFooter(content.footer);
 });
 
 
@@ -93,23 +99,3 @@ messageForm.addEventListener("submit", (event) => {
     // Reset form fields
     messageForm.reset();
 });
-
-
-/*
-*  Footer
-*/
-
-// Create footer element
-const footer = document.querySelector("footer");
-document.body.appendChild(footer);
-
-// Get current year
-const today = new Date();
-const thisYear = today.getFullYear();
-
-// Create copyright element
-const copyright = document.createElement("p");
-copyright.innerHTML = `&copy; ${thisYear} Gabriel Valle. All rights reserved.`;
-
-// Append copyright element to footer
-footer.appendChild(copyright);

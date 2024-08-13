@@ -25,7 +25,7 @@
     </nav>
   
     <header>
-      <section id="about" class="about">
+      <section class="about">
         <div class="about-text">
           <h1 class="about-title"></h1>
           <p class="about-description"></p>
@@ -36,12 +36,16 @@
         </div>        
       </section>
       
-      <section class="hidden-about">
+      <section id="about" class="hidden-about">
         <div class="hidden-about-content">
           <p></p>
         </div>
       </section>
-      <button class="toggle-about-btn"></button>
+      <div class="toggle-about-container">
+        <div class="toggle-about-btn">
+          <h1 class="toggle-about-text"></h1>
+        </div>
+      </div>
     </header>    
 
     <main>
@@ -93,22 +97,9 @@
     <footer>
       <section id="contact"> 
         <!-- Icons -->
-        <div class="social-links">
-          <!-- GitHub icon -->
-          <a class="social-link" href="https://github.com/Gaboo-o" target="_blank">
-            <img class="icon icon-hover" src="images/github_icon.svg" alt="GitHub">
-          </a>
-
-          <!-- LinkedIn icon -->
-          <a class="social-link" href="https://www.linkedin.com/in/gabriel-valle-06bb0b2b8/" target="_blank">
-            <img class="icon icon-hover" src="images/linkedin_icon.svg" alt="LinkedIn">
-          </a>
-          
-          <!-- Gmail icon -->  
-          <a class="social-link" href="mailto:gabrielvalle33210@gmail.com" target="_blank">
-            <img class="icon icon-hover" src="images/gmail_icon.svg" alt="Gmail">
-          </a>
-        </div>
+        <div class="links-container"></div>
+        <!-- Copyright -->
+        <p class="copyright"></p>
       </section>
     </footer>  
     

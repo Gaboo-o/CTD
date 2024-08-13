@@ -2,7 +2,9 @@ import { dataFetch } from "../dataFetch.js";
 
 export async function initializeProjects(data) {
     // Title
-    document.querySelector(".projects-title").innerHTML = data.title;
+    const projectsTitle = document.querySelector(".projects-title");
+    projectsTitle.innerHTML = data.title;
+    
     const projectsContainer = document.querySelector(".projects-container");
 
     const projectPromises = data.list.map(async (item) => {

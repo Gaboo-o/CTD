@@ -1,20 +1,4 @@
-export function initializeHeader(data) {
-    /** About **/
-    const aboutData = data.about;
-    
-    // Title
-    const title = document.querySelector(".about-title");
-    title.innerHTML = aboutData.title.replace("\n", "<br>");
-
-    // Description
-    const description = document.querySelector(".about-description");
-    description.textContent = aboutData.description.replace("\n", "<br>");
-
-    // Image
-    const image = document.querySelector(".about-image-container img")
-    image.src = aboutData.imageSrc;
-    image.alt = aboutData.imageAlt;
-
+export function initializeHiddenAbout(data) {
     /** Hidden About **/
     const hiddenAboutData = data.hiddenAbout;
 
@@ -24,37 +8,66 @@ export function initializeHeader(data) {
     // Details
     const details = document.querySelector(".hidden-about-content p");
     details.innerHTML = hiddenAboutData.details.replace("\n", "<br>");
-
+    
     // Toggle button
-    const toggleAbout = document.querySelector(".toggle-about-btn");
-    toggleAbout.innerHTML = hiddenAboutData.toggleClose;
+    const toggleAboutContainer = document.querySelector(".toggle-about-container");
+    const toggleAbout = document.querySelector(".toggle-about-text");
+    toggleAbout.innerHTML = hiddenAboutData.toggleOpen.outline;
 
     let isActive = false;
 
     toggleAbout.addEventListener("click", () => {
         hiddenAbout.classList.toggle("active");
-        toggleAbout.innerHTML = !isActive ? hiddenAboutData.toggleOpen : hiddenAboutData.toggleClose;
 
         if (!isActive) {
+            toggleAboutContainer.style.borderTop = "10px solid transparent";
+            toggleAboutContainer.style.borderBottom = "10px solid var(--border-color)";
+
+            toggleAbout.innerHTML = hiddenAboutData.toggleClose.outline;
+
             smoothScrollTo(hiddenAbout);
+        }
+        else {
+            toggleAboutContainer.style.borderTop = "5px solid var(--border-color)";
+            toggleAboutContainer.style.borderBottom = "5px solid transparent";
+
+            toggleAbout.innerHTML = hiddenAboutData.toggleOpen.outline;
         }
 
         isActive = !isActive;
     });
 
+    toggleAbout.addEventListener("open", () => {
+        if (!isActive) {
+            toggleAbout.click()
+        }
+    })
+
     // Border color
     toggleAbout.addEventListener("mouseover", () => {
-        hiddenAbout.style.borderBottom = 
-            !isActive 
-                ? `10px solid var(--text-hover-color)` 
-                : `5px solid var(--text-hover-color)`;
+        if (!isActive) {
+            toggleAboutContainer.style.borderTopWidth = "10px";
+            toggleAboutContainer.style.borderBottomWidth = "10px";
+            toggleAbout.innerHTML = hiddenAboutData.toggleOpen.fill;
+        }
+        else {
+            toggleAboutContainer.style.borderTopWidth = "5px";
+            toggleAboutContainer.style.borderBottomWidth = "5px";
+            toggleAbout.innerHTML = hiddenAboutData.toggleClose.fill;
+        }
     });
 
     toggleAbout.addEventListener("mouseout", () => {
-        hiddenAbout.style.borderBottom = 
-            !isActive 
-                ? `5px solid var(--border-color)` 
-                : `10px solid var(--border-color)`;
+        if (!isActive) {
+            toggleAboutContainer.style.borderTopWidth = "5px";
+            toggleAboutContainer.style.borderBottomWidth = "5px";
+            toggleAbout.innerHTML = hiddenAboutData.toggleOpen.outline;
+        }
+        else {
+            toggleAboutContainer.style.borderTopWidth = "10px";
+            toggleAboutContainer.style.borderBottomWidth = "10px";
+            toggleAbout.innerHTML = hiddenAboutData.toggleClose.outline;
+        }
     });
 }
 
