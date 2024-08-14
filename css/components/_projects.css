@@ -24,7 +24,7 @@
     justify-content: center;
 }
 
-.project {
+.project {  
     box-sizing: border-box;
     flex: 1 1 calc(100% / var(--projects-per-row) - var(--gap)); /* Calculates initial size */
     max-width: calc(100% / var(--projects-per-row) - var(--gap)); /* Prevents stretching to fill the available space */
@@ -40,11 +40,13 @@
 .project-image {
     width: 100%;
     height: auto;
+    border: 1px solid red;
 }
 
 .project-details {
     padding: 0.5em;
     text-align: center;
+    border: 1px solid green;
 }
 
 .project-details-button {
@@ -61,10 +63,12 @@
     color: var(--text-color);
 }
 
-.project-details-button:hover {
+.project-details-button:hover,
+.project-details-button:focus {
     background: var(--background-hover-color);
     color: var(--text-hover-color);  
     mask: none;
+    outline: none;
 }
 
 @media (max-width: 1000px) {

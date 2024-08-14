@@ -60,16 +60,20 @@ export function initializeNavigation(data) {
     // Menu logic
     let isActive = false;
 
-    menuToggle.addEventListener("click", () => {
+    const menuToggleClick = () => {
         const navButtons = document.querySelectorAll(".nav-button");
         const delayMultiplier = 100;
 
-        console.log("here2");
-
         if (!isActive) {
+            menuIcon.src = data.menu.open.src;
+            menuIcon.alt = data.menu.open.alt;
+
             navListRight.classList.add("active");            
         }
         else {
+            menuIcon.src = data.menu.close.src;
+            menuIcon.alt = data.menu.close.alt;
+
             const totalDuration = (navButtons.length + 1) * delayMultiplier;
 
             setTimeout(() => {
@@ -89,7 +93,35 @@ export function initializeNavigation(data) {
         });
 
         isActive = !isActive;
-    });
+    };
+    
+    menuToggle.addEventListener("click", menuToggleClick, false);
+    menuToggle.addEventListener("focus", menuToggleClick, false);   
+
+    const menuToggleHoverOn = () => {
+        if (!isActive) {
+            menuIcon.src = data.menu.closeFill.src;
+            menuIcon.alt = data.menu.closeFill.alt;
+        }
+        else {
+            menuIcon.src = data.menu.openFill.src;
+            menuIcon.alt = data.menu.openFill.alt;
+        }
+    }
+
+    const menuToggleHoverOff = () => {
+        if (!isActive) {
+            menuIcon.src = data.menu.close.src;
+            menuIcon.alt = data.menu.close.alt;
+        }
+        else {
+            menuIcon.src = data.menu.open.src;
+            menuIcon.alt = data.menu.open.alt;
+        }
+    }
+
+    menuToggle.addEventListener("mouseover", menuToggleHoverOn, true);
+    menuToggle.addEventListener("mouseout", menuToggleHoverOff, true); 
 }
 
 /* 

@@ -33,6 +33,7 @@
 .nav-button {
   display: flex;
   padding: 1.5em 1em;
+  font-size: 1.2em;
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
@@ -47,7 +48,7 @@
 
 /* Navigation images */
 .nav-list-img {
-  width: 40px;
+  width: 32px;
   height: auto;
   margin-right: 0.5em;
 }

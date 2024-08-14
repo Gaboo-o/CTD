@@ -5,11 +5,29 @@
         "menuIconSrc": "images/github_icon.svg",
         "menuIconAlt": "Menu Icon",
         "navItems": [
-          { "text": "About", "src": "images/github_icon.svg", "href": "#about" },
-          { "text": "Skills", "src": "images/github_icon.svg", "href": "#skills" },
-          { "text": "Projects", "src": "images/github_icon.svg", "href": "#projects" },
-          { "text": "Contact", "src": "images/github_icon.svg", "href": "#contact" }
-        ]
+          { "text": "About", "src": "images/navigation/about_icon.svg", "href": "#about" },
+          { "text": "Skills", "src": "images/navigation/skills_icon.svg", "href": "#skills" },
+          { "text": "Projects", "src": "images/navigation/projects_icon.svg", "href": "#projects" },
+          { "text": "Contact", "src": "images/navigation/contact_icon.svg", "href": "#contact" }
+        ],
+        "menu": {
+            "open": {
+                "src": "images/navigation/menu/menuOpen_icon.svg",
+                "alt": "MenuOpen"
+            },
+            "openFill": {
+                "src": "images/navigation/menu/menuOpenFill_icon.svg",
+                "alt": "MenuOpenFill"
+            },
+            "close": {
+                "src": "images/navigation/menu/menuClose_icon.svg",
+                "alt": "MenuClose"
+            },
+            "closeFill": {
+                "src": "images/navigation/menu/menuCloseFill_icon.svg",
+                "alt": "MenuCloseFill"
+            }
+        }
     },
     "header": {
         "about": {
@@ -32,19 +50,27 @@
     },
     "skills": {
         "title": "Skills",
-        "list": [
-          { "src": "images/github_icon.svg", "alt": "C++" },
-          { "src": "images/github_icon.svg", "alt": "Javascript" },
-          { "src": "images/github_icon.svg", "alt": "HTML" },
-          { "src": "images/github_icon.svg", "alt": "CSS" },
-          { "src": "images/github_icon.svg", "alt": "Python" },
-          { "src": "images/github_icon.svg", "alt": "C#" },
-          { "src": "images/github_icon.svg", "alt": "Git" }
-        ],
-        "settings": [
-            { "duration": "20s", "direction": "normal" },
-            { "duration": "15s", "direction": "reverse" }
-        ]
+        "list": {
+            "languages": [
+                { "src": "images/skills/languages/cPlusPlus_icon.svg", "alt": "C++" },
+                { "src": "images/skills/languages/javascript_icon.svg", "alt": "Javascript" },
+                { "src": "images/skills/languages/html_icon.svg", "alt": "HTML" },
+                { "src": "images/skills/languages/css_icon.svg", "alt": "CSS" },
+                { "src": "images/skills/languages/python_icon.svg", "alt": "Python" },
+                { "src": "images/skills/languages/cSharp_icon.svg", "alt": "C#" }
+            ],
+            "frameworks": [
+                { "src": "images/skills/frameworks/numpy_icon.svg", "alt": "Numpy" },
+                { "src": "images/skills/frameworks/pandas_icon.svg", "alt": "Pandas" },
+                { "src": "images/skills/frameworks/pytest_icon.svg", "alt": "Pytest" }
+            ],
+            "other": [
+                { "src": "images/skills/other/git_icon.svg", "alt": "Git" },
+                { "src": "images/skills/other/unity_icon.svg", "alt": "Unity" },
+                { "src": "images/skills/other/visualStudio_icon.svg", "alt": "VisualStudio" },
+                { "src": "images/skills/other/visualStudioCode_icon.svg", "alt": "VisualStudioCode" }
+            ]
+        }
     },
     "projects": {
         "title": "Projects",

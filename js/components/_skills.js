@@ -3,23 +3,70 @@ export function initializeSkills(data) {
     const title = document.querySelector(".skills-title");
     title.innerHTML = data.title;
 
-    // Sliders
-    const sliders = document.querySelectorAll(".slider");
+    // Skills container
+    const skillsContainer = document.querySelector(".skills-container");
 
-    data.list.forEach((item) => {
-        const skillTag = document.createElement("img");
-        skillTag.classList.add("skill-tag");
-        skillTag.src = item.src;
-        skillTag.alt = item.alt;
+    Object.entries(data.list).forEach(([category, items], index) => {
+        const slider = document.createElement("div");
+        slider.classList.add("slider");
 
-        sliders.forEach((slider, index) => {
-            const sliderInner = slider.querySelector(".slider-inner");
-            sliderInner.style.animationDuration = data.settings[index].duration;
-            sliderInner.style.animationDirection = data.settings[index].direction;
+        const sliderTitle = document.createElement("p");
+        sliderTitle.classList.add("slider-title");
+        sliderTitle.innerHTML = category;
 
-            for (let i = 0; i < 4; i++) { //loop effect
-                sliderInner.appendChild(skillTag.cloneNode(true));
-            }
+        const sliderInner = document.createElement("div");
+        sliderInner.classList.add("slider-inner");
+
+        const sliderItems = document.createElement("div");
+        sliderItems.classList.add("slider-items");
+
+        if (index % 2 === 0) {
+            sliderInner.style.borderLeft = `5px solid var(--border-color)`;
+            sliderItems.style.animationDirection = "reverse";
+        } else {
+            sliderInner.style.borderRight = `5px solid var(--border-color)`;
+            slider.style.flexDirection = "row-reverse";
+            sliderItems.style.animationDirection = "normal";
+        }
+
+        sliderItems.style.animationDuration = `${60 / items.length}s`;
+
+        items.forEach(item => {
+            const itemImg = document.createElement("img");
+            itemImg.classList.add("skill-icon");
+            itemImg.src = item.src;
+            itemImg.alt = item.alt;
+
+            sliderItems.appendChild(itemImg);
         });
+
+        slider.appendChild(sliderTitle);
+        sliderInner.appendChild(sliderItems);
+        slider.appendChild(sliderInner);
+
+        skillsContainer.appendChild(slider);
     });
 }
+
+// for (const [category, items] of Object.entries(data.list)) {
+//     const slider = document.createElement("div");
+//     slider.classList.add("slider");
+
+//     const sliderTitle = document.createElement("p");
+//     sliderTitle.classList.add("slider-title");
+//     sliderTitle.innerHTML = category;
+
+//     const sliderItems = document.createElement("div");
+//     sliderItems.classList.add("slider-title");   
+//     sliderItems.style.animationDuration = data.settings[index % data.settings.length].duration;
+//     sliderItems.style.animationDirection = data.settings[index % data.settings.length].direction;
+
+//     items.forEach( item => {
+//         const itemImg = document.createElement("img");
+//         itemImg.classList.add("skill-icon");
+//         itemImg.src = item.src;
+//         itemImg.alt = item.alt;
+
+//         slider.appendChild(itemImg);
+//     });
+// }
