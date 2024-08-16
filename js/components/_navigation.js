@@ -9,8 +9,8 @@ export function initializeNavigation(data) {
     // Menu
     const menuToggle = document.querySelector(".menu-toggle");
     const menuIcon = document.querySelector(".menu-toggle img");
-    menuIcon.src = data.menuIconSrc;
-    menuIcon.alt = data.menuIconAlt;
+    menuIcon.src = data.menu.close.src;
+    menuIcon.alt = data.menu.close.alt;
 
     // Trigger hidden about
     const toggleAbout = document.querySelector(".toggle-about-text");
@@ -60,68 +60,65 @@ export function initializeNavigation(data) {
     // Menu logic
     let isActive = false;
 
+    const updateMenuIcon = (src, alt) => {
+        menuIcon.src = src;
+        menuIcon.alt = alt;
+    };
+
     const menuToggleClick = () => {
         const navButtons = document.querySelectorAll(".nav-button");
         const delayMultiplier = 100;
 
         if (!isActive) {
-            menuIcon.src = data.menu.open.src;
-            menuIcon.alt = data.menu.open.alt;
+            updateMenuIcon(data.menu.open.src, data.menu.open.alt);
 
-            navListRight.classList.add("active");            
-        }
-        else {
-            menuIcon.src = data.menu.close.src;
-            menuIcon.alt = data.menu.close.alt;
+            navListRight.classList.add("active");
+        } else {
+            updateMenuIcon(data.menu.close.src, data.menu.close.alt);
 
             const totalDuration = (navButtons.length + 1) * delayMultiplier;
-
             setTimeout(() => {
                 navListRight.classList.remove("active");
             }, totalDuration);
         }
-        
+
         navButtons.forEach((button, index) => {
-            const delay = 
-                isActive
-                    ? (navButtons.length - 1 - index) * delayMultiplier
-                    : index * delayMultiplier;
-            
+            const delay = isActive 
+                ? (navButtons.length - 1 - index) * delayMultiplier 
+                : index * delayMultiplier;
+
             setTimeout(() => {
                 button.classList.toggle("active");
             }, delay);
         });
 
         isActive = !isActive;
+
+        // Manually trigger hover
+        if (menuToggle.matches(":hover")) {
+            menuToggleHoverOn();
+        }
     };
-    
-    menuToggle.addEventListener("click", menuToggleClick, false);
-    menuToggle.addEventListener("focus", menuToggleClick, false);   
 
     const menuToggleHoverOn = () => {
-        if (!isActive) {
-            menuIcon.src = data.menu.closeFill.src;
-            menuIcon.alt = data.menu.closeFill.alt;
+        if (isActive) {
+            updateMenuIcon(data.menu.openFill.src, data.menu.openFill.alt);
+        } else {
+            updateMenuIcon(data.menu.closeFill.src, data.menu.closeFill.alt);
         }
-        else {
-            menuIcon.src = data.menu.openFill.src;
-            menuIcon.alt = data.menu.openFill.alt;
-        }
-    }
+    };
 
     const menuToggleHoverOff = () => {
-        if (!isActive) {
-            menuIcon.src = data.menu.close.src;
-            menuIcon.alt = data.menu.close.alt;
+        if (isActive) {
+            updateMenuIcon(data.menu.open.src, data.menu.open.alt);
+        } else {
+            updateMenuIcon(data.menu.close.src, data.menu.close.alt);
         }
-        else {
-            menuIcon.src = data.menu.open.src;
-            menuIcon.alt = data.menu.open.alt;
-        }
-    }
+    };
 
+    menuToggle.addEventListener("click", menuToggleClick, false);
     menuToggle.addEventListener("mouseover", menuToggleHoverOn, true);
-    menuToggle.addEventListener("mouseout", menuToggleHoverOff, true); 
+    menuToggle.addEventListener("mouseout", menuToggleHoverOff, true);
 }
 
 /* 

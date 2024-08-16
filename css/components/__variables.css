@@ -1,7 +1,17 @@
 :root {
     --background-color: #353535;
+    --background-color-dark: #454545;
     --background-hover-color: #ffffff;
     --text-color: #ffffff;
     --text-hover-color: #000000;
     --border-color: #ffffff;
+}
+
+:root.light-mode {
+    --background-color: #ffffff;
+    --background-color-dark: #c7c7c7;
+    --background-hover-color: #000000;
+    --text-color: #000000;
+    --text-hover-color: #ffffff;
+    --border-color: #000000;
 }

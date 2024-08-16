@@ -1,9 +1,12 @@
+@import "__variables.css";
+
 @import url("components/_header.css");
 @import url("components/_navigation.css");
 @import url("components/_skills.css");
 @import url("components/_projects.css");
 @import url("components/_messages.css");
 @import url("components/_footer.css");
+@import url("components/_theme.css");
 
 /************************ 
 *        General        *
@@ -11,21 +14,22 @@
 * { 
     margin: 0; 
     padding: 0;     
-}
-
-body {
     font-family: Arial, sans-serif;
     font-weight: bold;
     text-align: left;
-    background-color: #353535;
-    color: #ffffff;
     scroll-behavior: smooth;
 }
 
-footer {
-    padding: 0.2rem 0; 
-    margin: 0;
-    text-align: center;
-    background-color: #454545;
-    color: #ffffff;
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
+}
+
+.light-mode img {
+    filter: brightness(0) invert(0);
 }

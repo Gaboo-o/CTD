@@ -1,10 +1,12 @@
 import { dataFetch } from "./dataFetch.js";
+
 import { initializeNavigation } from "./components/_navigation.js";
 import { initializeAbout } from "./components/_about.js";
 import { initializeHiddenAbout } from "./components/_hiddenAbout.js";
 import { initializeSkills } from "./components/_skills.js"
 import { initializeProjects } from "./components/_projects.js"
 import { initializeFooter } from "./components/_footer.js"
+import { initializeTheme } from "./components/_theme.js"
 
 /*
 *  Getting Content
@@ -44,8 +46,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //Footer 
     initializeFooter(content.footer);
-});
 
+    // Theme
+    initializeTheme();
+});
 
 /*
 *  Contact

@@ -12,7 +12,7 @@ export function initializeSkills(data) {
 
         const sliderTitle = document.createElement("p");
         sliderTitle.classList.add("slider-title");
-        sliderTitle.innerHTML = category;
+        sliderTitle.innerHTML = category.charAt(0).toUpperCase() + category.slice(1);
 
         const sliderInner = document.createElement("div");
         sliderInner.classList.add("slider-inner");
@@ -20,53 +20,40 @@ export function initializeSkills(data) {
         const sliderItems = document.createElement("div");
         sliderItems.classList.add("slider-items");
 
-        if (index % 2 === 0) {
-            sliderInner.style.borderLeft = `5px solid var(--border-color)`;
-            sliderItems.style.animationDirection = "reverse";
-        } else {
-            sliderInner.style.borderRight = `5px solid var(--border-color)`;
-            slider.style.flexDirection = "row-reverse";
-            sliderItems.style.animationDirection = "normal";
-        }
-
-        sliderItems.style.animationDuration = `${60 / items.length}s`;
-
         items.forEach(item => {
+            const itemContainer = document.createElement("div");
+            itemContainer.classList.add("skill-icon-container");
+
             const itemImg = document.createElement("img");
             itemImg.classList.add("skill-icon");
             itemImg.src = item.src;
             itemImg.alt = item.alt;
 
-            sliderItems.appendChild(itemImg);
+            const hoverText = document.createElement("div");
+            hoverText.classList.add("skill-icon-hover-text");
+            hoverText.textContent = item.alt;
+
+            itemContainer.appendChild(itemImg);
+            itemContainer.appendChild(hoverText);
+            sliderItems.appendChild(itemContainer);
         });
 
+        if (index % 2 === 0) {
+            sliderInner.style.borderLeft = `5px solid var(--border-color)`;
+            sliderItems.style.animationDirection = "normal";
+        } else {
+            sliderInner.style.borderRight = `5px solid var(--border-color)`;
+            slider.style.flexDirection = "row-reverse";
+            sliderItems.style.animationDirection = "reverse";
+        }
+
+        for (let i = 0; i < 6; i++) { //caveman solution
+            sliderInner.appendChild(sliderItems.cloneNode(true));
+        }
+            
         slider.appendChild(sliderTitle);
-        sliderInner.appendChild(sliderItems);
         slider.appendChild(sliderInner);
 
         skillsContainer.appendChild(slider);
     });
 }
-
-// for (const [category, items] of Object.entries(data.list)) {
-//     const slider = document.createElement("div");
-//     slider.classList.add("slider");
-
-//     const sliderTitle = document.createElement("p");
-//     sliderTitle.classList.add("slider-title");
-//     sliderTitle.innerHTML = category;
-
-//     const sliderItems = document.createElement("div");
-//     sliderItems.classList.add("slider-title");   
-//     sliderItems.style.animationDuration = data.settings[index % data.settings.length].duration;
-//     sliderItems.style.animationDirection = data.settings[index % data.settings.length].direction;
-
-//     items.forEach( item => {
-//         const itemImg = document.createElement("img");
-//         itemImg.classList.add("skill-icon");
-//         itemImg.src = item.src;
-//         itemImg.alt = item.alt;
-
-//         slider.appendChild(itemImg);
-//     });
-// }

@@ -11,8 +11,9 @@ export function initializeHiddenAbout(data) {
     
     // Toggle button
     const toggleAboutContainer = document.querySelector(".toggle-about-container");
-    const toggleAbout = document.querySelector(".toggle-about-text");
-    toggleAbout.innerHTML = hiddenAboutData.toggleOpen.outline;
+    const toggleAbout = document.querySelector(".toggle-about-img");
+    toggleAbout.src = hiddenAboutData.toggleOutline.src;
+    toggleAbout.alt = hiddenAboutData.toggleOutline.alt;
 
     let isActive = false;
 
@@ -23,7 +24,8 @@ export function initializeHiddenAbout(data) {
             toggleAboutContainer.style.borderTop = "10px solid transparent";
             toggleAboutContainer.style.borderBottom = "10px solid var(--border-color)";
 
-            toggleAbout.innerHTML = hiddenAboutData.toggleClose.outline;
+            toggleAbout.style.transform = "rotate(-90deg)";
+            toggleAbout.style.marginTop = "1em";
 
             smoothScrollTo(hiddenAbout);
         }
@@ -31,7 +33,8 @@ export function initializeHiddenAbout(data) {
             toggleAboutContainer.style.borderTop = "5px solid var(--border-color)";
             toggleAboutContainer.style.borderBottom = "5px solid transparent";
 
-            toggleAbout.innerHTML = hiddenAboutData.toggleOpen.outline;
+            toggleAbout.style.transform = "rotate(90deg)";
+            toggleAbout.style.marginTop = "-1em";
         }
 
         isActive = !isActive;
@@ -48,12 +51,12 @@ export function initializeHiddenAbout(data) {
         if (!isActive) {
             toggleAboutContainer.style.borderTopWidth = "10px";
             toggleAboutContainer.style.borderBottomWidth = "10px";
-            toggleAbout.innerHTML = hiddenAboutData.toggleOpen.fill;
+            toggleAbout.src = hiddenAboutData.toggleFill.src;
         }
         else {
             toggleAboutContainer.style.borderTopWidth = "5px";
             toggleAboutContainer.style.borderBottomWidth = "5px";
-            toggleAbout.innerHTML = hiddenAboutData.toggleClose.fill;
+            toggleAbout.src = hiddenAboutData.toggleFill.src;
         }
     });
 
@@ -61,12 +64,12 @@ export function initializeHiddenAbout(data) {
         if (!isActive) {
             toggleAboutContainer.style.borderTopWidth = "5px";
             toggleAboutContainer.style.borderBottomWidth = "5px";
-            toggleAbout.innerHTML = hiddenAboutData.toggleOpen.outline;
+            toggleAbout.src = hiddenAboutData.toggleOutline.src;
         }
         else {
             toggleAboutContainer.style.borderTopWidth = "10px";
             toggleAboutContainer.style.borderBottomWidth = "10px";
-            toggleAbout.innerHTML = hiddenAboutData.toggleClose.outline;
+            toggleAbout.src = hiddenAboutData.toggleOutline.src;
         }
     });
 }

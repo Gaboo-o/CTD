@@ -25,6 +25,8 @@
 }
 
 .project {  
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     flex: 1 1 calc(100% / var(--projects-per-row) - var(--gap)); /* Calculates initial size */
     max-width: calc(100% / var(--projects-per-row) - var(--gap)); /* Prevents stretching to fill the available space */
@@ -40,13 +42,13 @@
 .project-image {
     width: 100%;
     height: auto;
-    border: 1px solid red;
+    filter: brightness(1) invert(0);
 }
 
 .project-details {
     padding: 0.5em;
+    margin-top: auto;
     text-align: center;
-    border: 1px solid green;
 }
 
 .project-details-button {

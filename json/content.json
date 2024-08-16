@@ -2,8 +2,6 @@
     "navBar": {
         "logoSrc": "images/GV_Logo-black.png",
         "logoAlt": "Logo",
-        "menuIconSrc": "images/github_icon.svg",
-        "menuIconAlt": "Menu Icon",
         "navItems": [
           { "text": "About", "src": "images/navigation/about_icon.svg", "href": "#about" },
           { "text": "Skills", "src": "images/navigation/skills_icon.svg", "href": "#skills" },
@@ -38,14 +36,8 @@
         },
         "hiddenAbout": {
             "details": "Detailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...",
-            "toggleClose": {
-                "fill": "\u25B4",
-                "outline": "\u25B5"
-            },
-            "toggleOpen": {
-                "fill": "\u25BE",
-                "outline": "\u25BF"
-            }
+            "toggleOutline": { "src": "images/toggleOutline_icon.svg", "alt": "Menu Toggle" },
+            "toggleFill": { "src": "images/toggleFill_icon.svg", "alt": "Menu Toggle" }
         }
     },
     "skills": {
@@ -68,7 +60,7 @@
                 { "src": "images/skills/other/git_icon.svg", "alt": "Git" },
                 { "src": "images/skills/other/unity_icon.svg", "alt": "Unity" },
                 { "src": "images/skills/other/visualStudio_icon.svg", "alt": "VisualStudio" },
-                { "src": "images/skills/other/visualStudioCode_icon.svg", "alt": "VisualStudioCode" }
+                { "src": "images/skills/other/visualStudioCode_icon.svg", "alt": "VSCode" }
             ]
         }
     },
