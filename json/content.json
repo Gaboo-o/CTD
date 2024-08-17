@@ -9,35 +9,23 @@
           { "text": "Contact", "src": "images/navigation/contact_icon.svg", "href": "#contact" }
         ],
         "menu": {
-            "open": {
-                "src": "images/navigation/menu/menuOpen_icon.svg",
-                "alt": "MenuOpen"
-            },
-            "openFill": {
-                "src": "images/navigation/menu/menuOpenFill_icon.svg",
-                "alt": "MenuOpenFill"
-            },
-            "close": {
-                "src": "images/navigation/menu/menuClose_icon.svg",
-                "alt": "MenuClose"
-            },
-            "closeFill": {
-                "src": "images/navigation/menu/menuCloseFill_icon.svg",
-                "alt": "MenuCloseFill"
-            }
+            "open": { "src": "images/navigation/menu/menuOpen_icon.svg", "alt": "MenuOpen" },
+            "openFill": { "src": "images/navigation/menu/menuOpenFill_icon.svg", "alt": "MenuOpenFill" },
+            "close": { "src": "images/navigation/menu/menuClose_icon.svg", "alt": "MenuClose" },
+            "closeFill": { "src": "images/navigation/menu/menuCloseFill_icon.svg", "alt": "MenuCloseFill" }
         }
     },
     "header": {
         "about": {
             "title": "Gabriel\nValle",
             "description": "The description will go here...",
-            "imageSrc": "images/profilePicture.png",
+            "imageSrc": "images/header/profilePicture.png",
             "imageAlt": "Profile Picture"
         },
         "hiddenAbout": {
             "details": "Detailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...\nDetailed information goes here...",
-            "toggleOutline": { "src": "images/toggleOutline_icon.svg", "alt": "Menu Toggle" },
-            "toggleFill": { "src": "images/toggleFill_icon.svg", "alt": "Menu Toggle" }
+            "toggleOutline": { "src": "images/header/toggleOutline_icon.svg", "alt": "Menu Toggle" },
+            "toggleFill": { "src": "images/header/toggleFill_icon.svg", "alt": "Menu Toggle" }
         }
     },
     "skills": {
@@ -74,9 +62,9 @@
     },
     "footer": {
         "list": [
-          { "src": "images/github_icon.svg", "alt": "GitHub", "href": "https://github.com/Gaboo-o" },
-          { "src": "images/linkedin_icon.svg", "alt": "LinkedIn", "href": "https://www.linkedin.com/in/gabriel-valle-06bb0b2b8/" },
-          { "src": "images/gmail_icon.svg", "alt": "Gmail", "href": "mailto:gabrielvalle33210@gmail.com" }
+          { "src": "images/footer/github_icon.svg", "alt": "GitHub", "href": "https://github.com/Gaboo-o" },
+          { "src": "images/footer/linkedin_icon.svg", "alt": "LinkedIn", "href": "https://www.linkedin.com/in/gabriel-valle-06bb0b2b8/" },
+          { "src": "images/footer/gmail_icon.svg", "alt": "Gmail", "href": "mailto:gabrielvalle33210@gmail.com" }
         ]
     }
 }

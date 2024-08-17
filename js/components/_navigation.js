@@ -13,7 +13,7 @@ export function initializeNavigation(data) {
     menuIcon.alt = data.menu.close.alt;
 
     // Trigger hidden about
-    const toggleAbout = document.querySelector(".toggle-about-text");
+    const toggleAbout = document.querySelector(".toggle-about-img");
 
     // Nav items
     const navListRight = document.querySelector(".nav-list-right");

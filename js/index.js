@@ -57,18 +57,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 */
 
 function updateFontSize() {
-    const baseFontSize = 16; // Base font size in pixels
-    const widthChangePerPixel = 500; // Width increment/decrement per font size change
-    const fontSizeChangePerPixel = 1; // Font size change per width increment
+    const baseFont = 16;
+    const baseWidth = 1200; 
+    const widthChange = 500; // Width threshold to increment/decrement font
+    const sizeChange = 1; // px to increment/decrement
 
-    // Get the current width of the viewport
-    const viewportWidth = window.innerWidth;
+    // Get current width
+    const currentWidth = window.innerWidth;
 
-    // Calculate the new font size
-    const newFontSize = baseFontSize + Math.floor((viewportWidth - 1200) / widthChangePerPixel) * fontSizeChangePerPixel;
+    // Increment/dec font by 1 for each 500 px change in width
+    const newFont = baseFont + Math.floor((currentWidth - baseWidth) / widthChange) * sizeChange;
 
-    // Set the new font size
-    document.documentElement.style.fontSize = `${newFontSize}px`;
+    // Set new font size
+    document.documentElement.style.fontSize = `${newFont}px`;
 }
 
 updateFontSize();
@@ -76,7 +77,6 @@ updateFontSize();
 window.addEventListener("resize", updateFontSize);
 
 
-// Select form
 const messageForm = document.forms["leave_message"];
 
 messageForm.addEventListener("submit", (event) => {
@@ -107,7 +107,7 @@ messageForm.addEventListener("submit", (event) => {
         const entry = removeButton.parentNode;
         entry.remove();
 
-        // Hide the #messages section if the list is empty
+        // Hide messgae when empty
         if (messageList.children.length === 0) {
             messageSection.style.display = "none";
         }
