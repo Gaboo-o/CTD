@@ -51,23 +51,41 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeTheme();
 });
 
+
 /*
-*  Contact
+*  Font Resize
 */
+
+function updateFontSize() {
+    const baseFontSize = 16; // Base font size in pixels
+    const widthChangePerPixel = 500; // Width increment/decrement per font size change
+    const fontSizeChangePerPixel = 1; // Font size change per width increment
+
+    // Get the current width of the viewport
+    const viewportWidth = window.innerWidth;
+
+    // Calculate the new font size
+    const newFontSize = baseFontSize + Math.floor((viewportWidth - 1200) / widthChangePerPixel) * fontSizeChangePerPixel;
+
+    // Set the new font size
+    document.documentElement.style.fontSize = `${newFontSize}px`;
+}
+
+updateFontSize();
+
+window.addEventListener("resize", updateFontSize);
+
 
 // Select form
 const messageForm = document.forms["leave_message"];
 
 messageForm.addEventListener("submit", (event) => {
-    // Prevent page from refreshing
     event.preventDefault();
 
-    // Get values from the form fields
-    const userName = event.target.usersName.value;
-    const userEmail = event.target.usersEmail.value;
-    const userMessage = event.target.usersMessage.value;
+    const userName = event.target.userName.value;
+    const userEmail = event.target.userEmail.value;
+    const userMessage = event.target.userMessage.value;
 
-    // Log the values to the console
     // console.log("Name:", userName);
     // console.log("Email:", userEmail);
     // console.log("Message:", userMessage);
@@ -82,7 +100,7 @@ messageForm.addEventListener("submit", (event) => {
     `;
 
     const removeButton = document.createElement("button");
-    removeButton.innerText = "remove";
+    removeButton.innerText = "Remove";
     removeButton.type = "button";
 
     removeButton.addEventListener("click", () => {
@@ -100,6 +118,5 @@ messageForm.addEventListener("submit", (event) => {
 
     messageSection.style.display = "block";
 
-    // Reset form fields
     messageForm.reset();
 });

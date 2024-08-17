@@ -1,6 +1,6 @@
 export function initializeSkills(data) {
     // Title
-    const title = document.querySelector(".skills-title");
+    const title = document.querySelector(".skills-title h1");
     title.innerHTML = data.title;
 
     // Skills container
@@ -39,10 +39,10 @@ export function initializeSkills(data) {
         });
 
         if (index % 2 === 0) {
-            sliderInner.style.borderLeft = `5px solid var(--border-color)`;
+            sliderInner.style.borderLeft = `var(--border-size) solid var(--border-color)`;
             sliderItems.style.animationDirection = "normal";
         } else {
-            sliderInner.style.borderRight = `5px solid var(--border-color)`;
+            sliderInner.style.borderRight = `var(--border-size) solid var(--border-color)`;
             slider.style.flexDirection = "row-reverse";
             sliderItems.style.animationDirection = "reverse";
         }

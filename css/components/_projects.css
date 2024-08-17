@@ -7,13 +7,16 @@
 }
 
 .projects-title {
-    font-size: 2em;
-    text-align: center;
     padding-top: 1em;
     margin: 1em 0;
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    border-top: 5px solid var(--border-color);
+    border-right: var(--border-size) solid transparent;
+    border-left: var(--border-size) solid transparent;
+    border-top: var(--border-size) solid var(--border-color);
+}
+
+.projects-title h1 {
+    font-size: 3em;
+    text-align: center;
 }
 
 .projects-container {
@@ -27,26 +30,31 @@
 .project {  
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
     flex: 1 1 calc(100% / var(--projects-per-row) - var(--gap)); /* Calculates initial size */
-    max-width: calc(100% / var(--projects-per-row) - var(--gap)); /* Prevents stretching to fill the available space */
+    border: var(--border-size) solid var(--border-color);
     margin-bottom: var(--gap);
-    border: 5px solid var(--border-color);
+    height: 30em;
+    max-width: calc(100% / var(--projects-per-row) - var(--gap)); /* Prevents stretching to fill the available space */
+    box-sizing: border-box;
     transition: transform 0.3s ease;
 }
 
 .project:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.5em);
 }
 
 .project-image {
     width: 100%;
-    height: auto;
+    height: 60%;
+    object-fit: cover;
     filter: brightness(1) invert(0);
 }
 
 .project-details {
+    flex: 1;
     padding: 0.5em;
+    border: var(--border-size) solid transparent;
+    border-top: var(--border-size) solid var(--border-color);
     margin-top: auto;
     text-align: center;
 }
@@ -55,7 +63,7 @@
     display: inline-block;
     padding: 1em;
     margin: 1em auto;
-    border: 5px solid var(--border-color);
+    border: var(--border-size) solid var(--border-color);
     mask:
         conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
         0 0 / calc(100% - var(--s)) calc(100% - var(--s)),

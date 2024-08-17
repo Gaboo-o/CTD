@@ -1,8 +1,9 @@
 import { dataFetch } from "../dataFetch.js";
+import { updateProjectImages } from "./_theme.js"
 
 export async function initializeProjects(data) {
     // Title
-    const projectsTitle = document.querySelector(".projects-title");
+    const projectsTitle = document.querySelector(".projects-title h1");
     projectsTitle.innerHTML = data.title;
     
     const projectsContainer = document.querySelector(".projects-container");
@@ -38,4 +39,6 @@ export async function initializeProjects(data) {
     });
 
     await Promise.all(projectPromises);
+
+    updateProjectImages();
 }

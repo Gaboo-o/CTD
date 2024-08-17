@@ -5,11 +5,13 @@
     --text-color: #ffffff;
     --text-hover-color: #000000;
     --border-color: #ffffff;
+    --border-size: 0.4em;
+    --border-size-hover: 0.8em;
 }
 
 :root.light-mode {
-    --background-color: #ffffff;
-    --background-color-dark: #c7c7c7;
+    --background-color: #dbdbdb;
+    --background-color-dark: #a7a7a7;
     --background-hover-color: #000000;
     --text-color: #000000;
     --text-hover-color: #ffffff;

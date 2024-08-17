@@ -29,7 +29,7 @@
     },
     "header": {
         "about": {
-            "title": "Title\nHere",
+            "title": "Gabriel\nValle",
             "description": "The description will go here...",
             "imageSrc": "images/profilePicture.png",
             "imageAlt": "Profile Picture"
@@ -67,9 +67,9 @@
     "projects": {
         "title": "Projects",
         "list": [
-            { "name": "CatsAndDogsGallery", "imgFile": "main/images/catTitle.png" },
-            { "name": "NiceLittleSmallMinimalisticGame", "imgFile": "" },
-            { "name": "CTD", "imgFile": "" }
+            { "name": "CatsAndDogsGallery", "imgFile": "main/demo.png" },
+            { "name": "NiceLittleSmallMinimalisticGame", "imgFile": "main/demo.png" },
+            { "name": "CTD", "imgFile": "main/demo.png" }
           ]
     },
     "footer": {

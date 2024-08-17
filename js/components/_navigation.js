@@ -119,6 +119,9 @@ export function initializeNavigation(data) {
     menuToggle.addEventListener("click", menuToggleClick, false);
     menuToggle.addEventListener("mouseover", menuToggleHoverOn, true);
     menuToggle.addEventListener("mouseout", menuToggleHoverOff, true);
+
+    // menuToggle.tabIndex = 0; 
+    // menuToggle.addEventListener("focus", menuToggleClick, false);
 }
 
 /* 

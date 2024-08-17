@@ -50,42 +50,44 @@
 
     <main>
       <section id="skills">
-        <h1 class="skills-title"></h1>
+        <div class="skills-title">
+          <h1></h1>
+        </div>
         <div class="skills-container"></div>
       </section>
     
       <section id="projects">
-        <h1 class="projects-title"></h1>
+        <div class="projects-title">
+          <h1></h1>
+        </div>
         <div class="projects-container">
         </div>
       </section>      
     </main>
 
     <!--Message form-->
-    <section id="contact-form">
-      <h2>Leave a Message</h2>
-      <form name="leave_message">
-          <div class="form-group">
-              <label for="usersName">Name:</label>
-              <input type="text" id="usersName" name="usersName" required>
-          </div>
-          <div class="form-group">
-              <label for="usersEmail">Email:</label>
-              <input type="email" id="usersEmail" name="usersEmail" required>
-          </div>
-          <div class="form-group">
-              <label for="usersMessage">Message:</label>
-              <textarea id="usersMessage" name="usersMessage" rows="5" required></textarea>
-          </div>
-          <button type="submit">Submit</button>
-      </form>
-    </section> 
+    <h2>Leave a Comment</h2>
+    <form name="leave_message">
+      <label>
+        Name:
+        <input type="text" id="userName" required>
+      </label>
+      <label>
+        Email:
+        <input type="email" id="userEmail" required>
+      </label>
+      <label>
+        Message:
+        <textarea id="userMessage" required></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
 
     <!--Message list-->
-    <section id="messages" style="display: none;">
+    <div id="messages" style="display: none;">
       <h2>Messages</h2>
       <ul></ul>
-    </section>
+    </div>
 
     <footer>
       <section id="contact"> 
