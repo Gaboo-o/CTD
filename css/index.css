@@ -1,4 +1,4 @@
-@import "__variables.css";
+@import url("components/__variables.css");
 
 @import url("components/_header.css");
 @import url("components/_navigation.css");
